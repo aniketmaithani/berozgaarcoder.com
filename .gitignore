@@ -1,0 +1,74 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+*.swp
+*.swo
+*~
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencies (if you decide to use npm/yarn later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs (if you add a build process later)
+/dist/
+/build/
+/out/
+/_site/
+/.jekyll-cache/
+.sass-cache/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Local development server
+.dev-server/
+
+# Draft content that shouldn't be published yet
+/draft/
+/drafts/
+*.draft.html
+*.draft.md
+
+# Image editing files
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Cache directories
+.cache/
