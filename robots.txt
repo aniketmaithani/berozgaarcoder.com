@@ -1,0 +1,12 @@
+# robots.txt for berozgaarcoder.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://berozgaarcoder.com/sitemap.xml
+
+# Disallow certain directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /draft/
+Disallow: /*.json$

@@ -1,0 +1,13 @@
+{
+    "posts": [
+      {
+        "title": "Finding My Path: A Job Search Journey",
+        "url": "/posts/finding-my-path-job-search-journey.html",
+        "image": "/images/lp.jpg",
+        "excerpt": "Follow along on my two-month journey to secure a remote tech job by June 2025...",
+        "date": "May 6, 2025",
+        "datetime": "2025-05-06T10:00:00+05:30",
+        "published": true
+      }
+    ]
+  }

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include SEO metadata -->
+    <!-- #include virtual="_includes/meta.html" -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BerozgaarCoder | Code Ka Jugaad</title>
+    <meta name="description" content="Personal blog of a passionate coder sharing insights, tutorials, and quirky coding adventures">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="BerozgaarCoder | Code Ka Jugaad">
+    <meta property="og:description" content="Personal blog of a passionate coder sharing insights, tutorials, and quirky coding adventures">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berozgaarcoder.com">
+    <meta property="og:image" content="https://berozgaarcoder.com/images/logo.jpg">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BerozgaarCoder | Code Ka Jugaad">
+    <meta name="twitter:description" content="Personal blog of a passionate coder sharing insights, tutorials, and quirky coding adventures">
+    <meta name="twitter:image" content="https://berozgaarcoder.com/images/logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Responsive meta tag for mobile optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-text">BerozgaarCoder</span>
+                </a>
+            </div>
+            <p class="tagline">Code Ka Jugaad</p>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/posts">Blog</a></li>
+                    <li><a href="/about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <section class="hero">
+                <h1>Welcome to BerozgaarCoder</h1>
+                <p class="lead">Coding adventures, tutorials, and tech musings from a passionate developer</p>
+            </section>
+
+            <section class="latest-posts">
+                <h2>Latest Posts</h2>
+                
+                <!-- Dynamic post grid that will be populated by loadLatestPosts() -->
+                <div class="post-grid" id="latest-posts-container">
+                    <!-- Posts will be loaded here dynamically -->
+                </div>
+                
+                <a href="/posts" class="btn btn-primary">View All Posts</a>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">BerozgaarCoder</span>
+                    <p class="tagline">Code Ka Jugaad</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/posts" class="footer-link">Blog</a></li>
+                        <li><a href="/about.html" class="footer-link">About</a></li>
+                        <li><a href="/contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/aniketmaithani" target="_blank" rel="noopener" aria-label="GitHub Profile" class="social-link">GitHub</a></li>
+                        <li><a href="https://twitter.com/2aniketmaithani" target="_blank" rel="noopener" aria-label="Twitter Profile" class="social-link">Twitter</a></li>
+                        <li><a href="https://linkedin.com/in/aniketmaithani" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="social-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 BerozgaarCoder. All rights reserved.</p>
+                <p class="footer-description">This blog is dedicated to sharing coding knowledge, personal experiences, and technical insights. All content is original unless otherwise stated.</p>
+                <p class="last-updated">Last updated: <time datetime="2025-05-06">May 6, 2025</time></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+    
+    <!-- Ensure posts are loaded after DOM is ready -->
+    <script>
+        // This will ensure loadLatestPosts() is called after the DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // loadLatestPosts() is already called in main.js
+            // This ensures the function exists and is properly called
+            if (typeof loadLatestPosts !== 'function') {
+                console.error('loadLatestPosts function not found');
+            }
+        });
+    </script>
+</body>
+</html>

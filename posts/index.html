@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | BerozgaarCoder</title>
+    <meta name="description" content="Browse through all articles, tutorials, and personal stories from BerozgaarCoder - sharing coding insights and tech adventures.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Blog | BerozgaarCoder">
+    <meta property="og:description" content="Browse through all articles, tutorials, and personal stories from BerozgaarCoder - sharing coding insights and tech adventures.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://berozgaarcoder.com/blog.html">
+    <meta property="og:image" content="https://berozgaarcoder.com/images/logo.jpg">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | BerozgaarCoder">
+    <meta name="twitter:description" content="Browse through all articles, tutorials, and personal stories from BerozgaarCoder - sharing coding insights and tech adventures.">
+    <meta name="twitter:image" content="https://berozgaarcoder.com/images/logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-text">BerozgaarCoder</span>
+                </a>
+            </div>
+            <p class="tagline">Code Ka Jugaad</p>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog.html" class="active">Blog</a></li>
+                    <li><a href="/about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            <section class="blog-header">
+                <h1>All Blog Posts</h1>
+                <p class="lead">Explore articles, tutorials, and personal stories about coding, tech, and career development.</p>
+            </section>
+
+            <section class="blog-filters">
+                <div class="filter-container">
+                    <div class="search-box">
+                        <input type="text" id="post-search" placeholder="Search posts..." aria-label="Search posts">
+                    </div>
+                    <div class="category-filter">
+                        <select id="category-select" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <option value="Career">Career</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="DevOps">DevOps</option>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="blog-content">
+                <!-- Dynamic post grid that will be populated by loadAllPosts() -->
+                <div class="post-grid" id="all-posts-container">
+                    <!-- Posts will be loaded here dynamically -->
+                    <!-- Loading state shows until posts are loaded -->
+                    <div class="loading-posts">
+                        <p>Loading posts...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">BerozgaarCoder</span>
+                    <p class="tagline">Code Ka Jugaad</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/blog.html" class="footer-link">Blog</a></li>
+                        <li><a href="/about.html" class="footer-link">About</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect With Me</h3>
+                    <ul class="social-links">
+                        <li><a href="https://github.com/aniketmaithani" target="_blank" rel="noopener" aria-label="GitHub Profile" class="social-link">GitHub</a></li>
+                        <li><a href="https://twitter.com/2aniketmaithani" target="_blank" rel="noopener" aria-label="Twitter Profile" class="social-link">Twitter</a></li>
+                        <li><a href="https://linkedin.com/in/aniketmaithani" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="social-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span class="current-year">2025</span> BerozgaarCoder. All rights reserved.</p>
+                <p class="footer-description">This blog is dedicated to sharing coding knowledge, personal experiences, and technical insights. All content is original unless otherwise stated.</p>
+                <p class="last-updated">Last updated: <time datetime="2025-05-06">May 6, 2025</time></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+    
+    <!-- Blog specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load all posts when page loads
+            loadAllPosts();
+            
+            // Set up search functionality
+            const searchInput = document.getElementById('post-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterPosts);
+            }
+            
+            // Set up category filter
+            const categorySelect = document.getElementById('category-select');
+            if (categorySelect) {
+                categorySelect.addEventListener('change', filterPosts);
+            }
+        });
+        
+        // Function to load all posts
+        function loadAllPosts() {
+            const postsContainer = document.getElementById('all-posts-container');
+            
+            if (!postsContainer) return;
+            
+            fetch('/posts.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load posts: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Get all published posts
+                    const publishedPosts = data.posts.filter(post => post.published);
+                    
+                    // Clear the loading state
+                    postsContainer.innerHTML = '';
+                    
+                    if (publishedPosts.length === 0) {
+                        postsContainer.innerHTML = '<div class="no-posts-message">No posts available at this time. Check back soon!</div>';
+                        return;
+                    }
+                    
+                    // Add each post to the grid
+                    publishedPosts.forEach(post => {
+                        const postCard = createPostCard(post);
+                        postsContainer.appendChild(postCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading posts:', error);
+                    postsContainer.innerHTML = '<div class="no-posts-message">Unable to load posts at this time. Please try again later.</div>';
+                });
+        }
+        
+        // Filter posts based on search input and category selection
+        function filterPosts() {
+            const searchTerm = document.getElementById('post-search').value.toLowerCase();
+            const selectedCategory = document.getElementById('category-select').value;
+            const allPostCards = document.querySelectorAll('.post-card');
+            
+            allPostCards.forEach(card => {
+                const title = card.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
+                const category = card.dataset.category || '';
+                
+                const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+                const matchesCategory = selectedCategory === '' || category === selectedCategory;
+                
+                // Show or hide the card based on filters
+                if (matchesSearch && matchesCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Check if any cards are visible
+            const visibleCards = document.querySelectorAll('.post-card[style="display: block"]');
+            const noResultsMessage = document.querySelector('.no-results-message');
+            
+            if (visibleCards.length === 0) {
+                if (!noResultsMessage) {
+                    const message = document.createElement('div');
+                    message.className = 'no-results-message';
+                    message.textContent = 'No posts match your search criteria.';
+                    document.getElementById('all-posts-container').appendChild(message);
+                }
+            } else if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
+        }
+    </script>
+</body>
+</html>
