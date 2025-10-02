@@ -1,6 +1,15 @@
 {
     "posts": [
       {
+        "title": "One Month Down: Job Search Progress Update",
+        "url": "/posts/one-month-down-job-search-progress-update.html",
+        "image": "/images/lp.jpg",
+        "excerpt": "A month into my job search journey - reflecting on progress made, challenges faced, and lessons learned while pursuing a remote tech role by June 2025.",
+        "date": "June 6, 2025",
+        "datetime": "2025-06-06T10:00:00+05:30",
+        "published": true
+      },
+      {
         "title": "Finding My Path: A Job Search Journey",
         "url": "/posts/finding-my-path-job-search-journey.html",
         "image": "/images/lp.jpg",
