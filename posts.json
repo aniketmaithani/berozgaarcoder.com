@@ -1,21 +1,30 @@
 {
     "posts": [
       {
+        "title": "The Long Road: When Recovery Refuses to Be Linear",
+        "url": "/posts/the-long-road-recovery-journey.html",
+        "image": "/images/lp.jpg",
+        "excerpt": "An honest reflection on the last two months - battling stress hormones, palpitations, grief, and the humbling realization that sometimes, we're just not ready yet.",
+        "date": "October 3, 2025",
+        "datetime": "2025-10-03T00:00:00+05:30",
+        "published": true
+      },
+      {
+        "title": "When Anxiety Whispers, Listen: One Day at a Time",
+        "url": "/posts/finding-my-path-job-search-journey.html",
+        "image": "/images/lp.jpg",
+        "excerpt": "The story of how ignoring my anxiety nearly broke me and how I found my way back to the light - one day at a time.",
+        "date": "September 25, 2025",
+        "datetime": "2025-09-25T10:00:00+05:30",
+        "published": true
+      },
+      {
         "title": "One Month Down: Job Search Progress Update",
         "url": "/posts/one-month-down-job-search-progress-update.html",
         "image": "/images/lp.jpg",
         "excerpt": "A month into my job search journey - reflecting on progress made, challenges faced, and lessons learned while pursuing a remote tech role by June 2025.",
         "date": "June 6, 2025",
         "datetime": "2025-06-06T10:00:00+05:30",
-        "published": true
-      },
-      {
-        "title": "Finding My Path: A Job Search Journey",
-        "url": "/posts/finding-my-path-job-search-journey.html",
-        "image": "/images/lp.jpg",
-        "excerpt": "Follow along on my two-month journey to secure a remote tech job by June 2025...",
-        "date": "May 6, 2025",
-        "datetime": "2025-05-06T10:00:00+05:30",
         "published": true
       }
     ]
