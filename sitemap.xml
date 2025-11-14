@@ -25,6 +25,14 @@
   </url>
   
   <!-- Blog Posts -->
+  <!-- Invoice Automation Post -->
+  <url>
+    <loc>https://berozgaarcoder.com/posts/automating-invoices-with-python-and-ses.html</loc>
+    <lastmod>2025-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- First Blog Post -->
   <url>
     <loc>https://berozgaarcoder.com/posts/finding-my-path-job-search-journey.html</loc>
@@ -32,7 +40,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Add additional URLs for each blog post as you create them -->
   <!-- Example:
   <url>
