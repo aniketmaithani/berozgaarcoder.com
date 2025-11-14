@@ -1,6 +1,15 @@
 {
     "posts": [
       {
+        "title": "The Invisible Labor Tax: When Documentation Becomes Your Curse",
+        "url": "/posts/the-invisible-labour-tax.html",
+        "image": "/images/sv.png",
+        "excerpt": "A candid reflection on freelance consulting in tech - the documentation paradox, scope creep, and the expectation of free labor disguised as 'good faith gestures'.",
+        "date": "November 14, 2025",
+        "datetime": "2025-11-14T14:00:00+05:30",
+        "published": true
+      },
+      {
         "title": "How I Automated My Invoicing System with Python and AWS SES",
         "url": "/posts/automating-invoices-with-python-and-ses.html",
         "image": "/images/iv.png",
