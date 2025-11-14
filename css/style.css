@@ -895,6 +895,34 @@ section h2::after {
   .post-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Blog post mobile styles */
+  .blog-post {
+    padding: var(--space-md);
+  }
+
+  .post-header h1 {
+    font-size: 2rem;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .post-content pre {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Dark mode support with improved readability */
