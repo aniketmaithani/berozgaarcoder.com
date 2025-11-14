@@ -6,21 +6,21 @@
 
 /* ===== CSS RESET & BASE STYLES ===== */
 :root {
-  /* Enhanced Color Palette */
-  --primary: #4f46e5;         /* Deeper indigo - more readable */
-  --primary-light: #818cf8;   /* Light indigo */
-  --primary-dark: #3730a3;    /* Very deep indigo for hover states */
-  --secondary: #f97316;       /* Orange accent color */
-  --secondary-light: #fb923c; /* Light orange */
-  --secondary-dark: #c2410c;  /* Deep orange */
+  /* Facebook-Inspired Color Palette */
+  --primary: #1877f2;         /* Facebook blue */
+  --primary-light: #4a9eff;   /* Light blue */
+  --primary-dark: #0c63d4;    /* Dark blue for hover states */
+  --secondary: #42b72a;       /* Facebook green accent */
+  --secondary-light: #5ec94a; /* Light green */
+  --secondary-dark: #36a420;  /* Deep green */
   
   /* Background & Text Colors */
-  --dark: #121212;            /* Deeper dark for better contrast */
-  --dark-gray: #27272a;       /* Dark gray for contrast areas */
-  --medium-gray: #52525b;     /* Medium gray for subheadings */
-  --gray: #71717a;            /* Mid gray for text */
-  --light-gray: #f4f4f5;      /* Light gray for backgrounds */
-  --off-white: #f8fafc;       /* Off-white for main background */
+  --dark: #1c1e21;            /* Dark text color */
+  --dark-gray: #3a3b3c;       /* Dark gray for secondary text */
+  --medium-gray: #65676b;     /* Medium gray for subheadings */
+  --gray: #8a8d91;            /* Mid gray for text */
+  --light-gray: #e4e6eb;      /* Light gray for borders */
+  --off-white: #f0f2f5;       /* Off-white for main background */
   --white: #ffffff;           /* Pure white */
   
   /* Typography */
@@ -78,7 +78,9 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   color: var(--dark);
-  background-color: var(--off-white); /* Slightly off-white is easier on the eyes */
+  background-color: var(--off-white);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Remove list styles */
@@ -219,10 +221,13 @@ code {
 
 /* ===== HEADER ===== */
 .site-header {
-  padding: var(--space-lg) 0;
+  padding: var(--space-md) 0;
   border-bottom: 1px solid var(--light-gray);
   background-color: var(--white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .site-header .container {
@@ -301,12 +306,27 @@ code {
   padding: var(--space-xxl) 0;
   text-align: center;
   background-color: var(--white);
-  border-bottom: 1px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-xl);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 {
+  color: var(--dark);
+  margin-bottom: var(--space-md);
+}
+
+.hero .lead {
+  color: var(--medium-gray);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===== MAIN CONTENT ===== */
 .site-main {
-  padding: var(--space-lg) 0 var(--space-xxl);
+  padding: var(--space-xl) 0 var(--space-xxl);
+  flex: 1;
 }
 
 section {
@@ -336,23 +356,24 @@ section h2::after {
 /* ===== POST GRID ===== */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-lg);
   margin-bottom: var(--space-xl);
 }
 
 .post-card {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   background-color: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-gray);
 }
 
 .post-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary);
 }
 
 .post-image {
@@ -766,12 +787,21 @@ section h2::after {
 
 /* ===== NEWSLETTER ===== */
 .newsletter {
-  background-color: var(--light-gray);
+  background-color: var(--white);
   padding: var(--space-xl);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-gray);
+}
+
+.newsletter h2 {
+  color: var(--dark);
+  margin-bottom: var(--space-sm);
+}
+
+.newsletter p {
+  color: var(--medium-gray);
 }
 
 .newsletter-form {
@@ -796,9 +826,11 @@ section h2::after {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background-color: var(--dark); /* Using our darker value */
-  color: var(--off-white); /* Using off-white for better readability */
-  padding: var(--space-xl) 0 var(--space-lg);
+  background-color: var(--white);
+  color: var(--dark);
+  padding: var(--space-xxl) 0 var(--space-lg);
+  border-top: 1px solid var(--light-gray);
+  margin-top: auto;
 }
 
 .footer-content {
@@ -809,19 +841,20 @@ section h2::after {
 }
 
 .footer-logo .logo-text {
-  color: var(--white);
+  color: var(--dark);
 }
 
 .footer-logo .tagline {
-  color: var(--light-gray);
-  opacity: 0.9; /* Increased from 0.7 for better readability */
+  color: var(--medium-gray);
+  opacity: 1;
 }
 
 .footer-links h3,
 .footer-social h3 {
-  font-size: 1.25rem;
-  margin-bottom: var(--space-lg);
-  color: var(--white);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+  color: var(--dark);
+  font-weight: 600;
 }
 
 .footer-links ul,
@@ -833,42 +866,76 @@ section h2::after {
 
 .footer-links a,
 .footer-social a {
-  color: var(--light-gray);
-  opacity: 0.9; /* Increased from 0.7 for better readability */
+  color: var(--medium-gray);
   transition: var(--transition);
-  font-weight: 500; /* Slightly bolder */
+  font-weight: 400;
+  font-size: 0.9375rem;
 }
 
 .footer-links a:hover,
 .footer-social a:hover {
-  opacity: 1;
-  color: var(--white);
-  text-decoration: underline;
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Slightly more visible border */
+  border-top: 1px solid var(--light-gray);
   padding-top: var(--space-lg);
+  margin-top: var(--space-xl);
   font-size: 0.875rem;
-  opacity: 0.9; /* Increased from 0.7 for better readability */
+  color: var(--medium-gray);
+}
+
+.footer-bottom p {
+  margin-bottom: var(--space-sm);
 }
 
 /* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .post-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
+  }
+}
+
 @media (max-width: 768px) {
+  :root {
+    --space-xxl: 3rem;
+  }
+  
+  .site-header {
+    padding: var(--space-sm) 0;
+  }
+  
   .site-header .container {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-md);
+    gap: var(--space-sm);
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .tagline {
+    font-size: 0.8rem;
+    margin-left: 0;
+    margin-top: var(--space-xs);
   }
   
   .main-nav {
     width: 100%;
-    margin-top: var(--space-md);
   }
   
   .main-nav ul {
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: var(--space-md);
+    flex-wrap: wrap;
   }
   
   .newsletter-form {
@@ -885,28 +952,46 @@ section h2::after {
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
   
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
   }
   
   .post-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .hero {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .hero .lead {
+    font-size: 1rem;
   }
 
   /* Blog post mobile styles */
   .blog-post {
-    padding: var(--space-md);
+    padding: 0;
   }
 
   .post-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .post-content {
     font-size: 1rem;
+    padding: var(--space-lg) var(--space-md);
   }
 
   .post-content h2 {
@@ -920,82 +1005,57 @@ section h2::after {
   }
 
   .post-content pre {
-    padding: 1rem;
+    padding: var(--space-md);
     font-size: 0.85rem;
+    margin-left: calc(var(--space-md) * -1);
+    margin-right: calc(var(--space-md) * -1);
+    border-radius: 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .share-buttons {
+    flex-direction: column;
+  }
+  
+  .share-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
-/* Dark mode support with improved readability */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Better dark mode color palette */
-    --dark: #f8fafc; /* Light text on dark background */
-    --white: #121212; /* Very dark background */
-    --off-white: #151515; /* Slightly lighter than the darkest background */
-    --light-gray: #1e1e1e; /* Dark but still distinguishable */
-    --medium-gray: #a1a1aa; /* Light enough to be visible */
-    --gray: #d4d4d8; /* Very light for good contrast */
-    
-    /* Adjusted accent colors for dark mode */
-    --primary: #818cf8; /* Lighter indigo for dark mode */
-    --primary-dark: #a5b4fc; /* Even lighter for hover states */
-    --secondary: #fb923c; /* Lighter orange for dark mode */
-    --secondary-dark: #fdba74; /* Even lighter for hover */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
   }
   
-  body {
-    color: var(--dark); /* Light text on dark background */
-    background-color: var(--white); /* Very dark background */
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  .post-grid {
+    gap: var(--space-sm);
   }
   
   .post-card {
-    background-color: var(--light-gray); /* Dark card background */
-    border-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
   }
   
-  .post-content {
-    background-color: var(--light-gray); /* Dark content background */
-  }
-  
-  input {
-    background-color: var(--off-white);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: var(--dark);
-  }
-  
-  .site-footer {
-    background-color: #050505; /* Even darker than the background for footer */
-    color: #f4f4f5; /* Light text for contrast */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .footer-links a,
-  .footer-social a {
-    color: #e4e4e7; /* Very light for good readability */
-    opacity: 1; /* No opacity in dark mode for better visibility */
-  }
-  
-  .footer-links h3,
-  .footer-social h3 {
-    color: #ffffff; /* Pure white for headers in footer */
-  }
-  
-  .footer-bottom {
-    color: #e4e4e7; /* Very light for good readability */
-    opacity: 1; /* No opacity in dark mode for better visibility */
-  }
-  
-  /* Better contrast for code in dark mode */
-  code {
-    background-color: #2d2d2d;
-    color: #e4e4e7;
-  }
-  
-  /* Improved blockquote styling for dark mode */
-  .post-content blockquote {
-    background-color: rgba(129, 140, 248, 0.1);
+  .btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
   }
 }
+
+/* Dark mode disabled - Light theme enforced for all users */
+/* The site now uses a consistent light theme regardless of system preferences */
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {

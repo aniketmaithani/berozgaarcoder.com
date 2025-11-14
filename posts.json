@@ -3,7 +3,7 @@
       {
         "title": "How I Automated My Invoicing System with Python and AWS SES",
         "url": "/posts/automating-invoices-with-python-and-ses.html",
-        "image": "/images/invoice-automation.jpg",
+        "image": "/images/iv.png",
         "excerpt": "Learn how I built a complete invoice automation system using Python and AWS SES to send automatic emails, track payments, and manage reminders with minimal external libraries.",
         "date": "November 14, 2025",
         "datetime": "2025-11-14T10:00:00+05:30",
