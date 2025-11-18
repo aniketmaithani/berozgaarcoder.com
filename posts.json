@@ -1,6 +1,15 @@
 {
     "posts": [
       {
+        "title": "Building a Parallel LLM Inference API During the Cloudflare Outage",
+        "url": "/posts/building-parallel-llm-inference-api.html",
+        "image": "/images/llm.png",
+        "excerpt": "How I built a scalable parallel LLM inference system using Modal.com during the Cloudflare outage - processing 1000 prompts across multiple models with GPU containers and intelligent queuing.",
+        "date": "November 18, 2025",
+        "datetime": "2025-11-18T10:00:00+05:30",
+        "published": true
+      },
+      {
         "title": "The Invisible Labor Tax: When Documentation Becomes Your Curse",
         "url": "/posts/the-invisible-labour-tax.html",
         "image": "/images/sv.png",
